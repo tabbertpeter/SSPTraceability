@@ -4,32 +4,32 @@
 This chapter describes in detail the content and structure of the XML schema stc.xsd, which represent common concepts that are reused in the other XML schemas of the specification.
 The purpose of extractiong these elements is to increase the flexibility and extensibility of the GlueParticles approach and to help to apply the GlueParticles concept to other topics in product and system engineering.
 
-[#sec-generalinformationtype]
+[#sec-generalInformationType]
 === GeneralInformationType
 
 This element type is used to encapsulate general information about the simulation or decision task, which is not part of any specific phase or step.
 
-[#im-generalinformationtypeschema]
+[#im-generalInformationTypeSchema]
 .GeneralInformationType element type structure and attributes
 image::GeneralInformationTypeSchema.png[]
 
 The GeneralInformationType element type is structured by the following subordinated elements.
 
-[#tb-generalinformationtypesubelements]
+[#tb-generalInformationTypeSubElements]
 .GeneralInformationType element structure
 [width="100%",options="header"]
 |===
 | Sub element name     | Optional / Mandatory | Details
-| DerivationChain      | Optional             | <<sec-derivationchain>>
-| GResourceOrReference | Optional             | <<sec-gresourceorreference>>
-| Link                 | Optional             | <<sec-linkstype>>
+| DerivationChain      | Optional             | <<sec-derivationChain>>
+| GResourceOrReference | Optional             | <<sec-gResourceOrReference>>
+| Link                 | Optional             | <<sec-linksType>>
 |===
 
 The Resource and ResourceReference elements if present, are used to provide additional information about the simulation task.
 
 The GeneralInformationType element is not associated with any specific attributes beyond the common SSP attributes.
 
-[#sec-derivationchain]
+[#sec-derivationChain]
 ==== DerivationChain
 
 The SSP Traceability data formats DTMD and STMD are primarily intended for the standardized exchange of information packages between tools and partners.
@@ -44,27 +44,27 @@ This serves as a basis for controlling the reintegration of received DTMD STMD a
 The DerivationChain element can be used to provide the appropriated set of information about files that were used to derive the current file.
 If the content of the current file can be considered to be derived from one or a set of other GlueParticle, then the top level meta data and DerivationChain information of those files should be included in their original order as entries in this file's DerivationChain element.
 
-[#im-derivationchainschema]
+[#im-derivationChainSchema]
 .DerivationChain element structure and attributes
 image::DerivationChainSchema.png[]
 
 The DerivationChain element is structured by the following subordinated elements.
 
-[#tb-derivationchainsubelements]
+[#tb-derivationChainSubElements]
 .DerivationChain element structure
 [width="100%",options="header"]
 |===
 | Sub element name     | Optional / Mandatory | Details
-| DerivationChainEntry | Optional             | <<sec-derivationchainentry>>
+| DerivationChainEntry | Optional             | <<sec-derivationChainEntry>>
 |===
 
 The DerivationChain element is not associated with any specific attributes beyond the common SSP attributes.
 
-[#sec-derivationchainentry]
+[#sec-derivationChainEntry]
 ===== DerivationChainEntry
 The DerivationChainEntry element is a single entry within the derivation chain.
 
-[#im-derivationchainentryschema]
+[#im-derivationChainEntrySchema]
 .DerivationChainEntry element structure and attributes
 image::DerivationChainEntrySchema.png[]
 
@@ -72,7 +72,7 @@ The DerivationChainEntry element is not structured by subordinated elements.
 
 The DerivationChainEntry element is associated with the following attributes.
 
-[#tb-derivationchainentryattributes]
+[#tb-derivationChainEntryAttributes]
 .DerivationChainEntry element attributes
 [width="100%",options="header"]
 |===
@@ -86,17 +86,17 @@ The DerivationChainEntry element is associated with the following attributes.
 | generationDateAndTime | Optional             | This attribute gives the date and time this file was generated.
 |===
 
-[#sec-gelementcommon]
+[#sec-gElementCommon]
 === GElementCommon
 Common element content for all modeling elements of the file.
 
-[#im-gelementcommonschema]
+[#im-gElementCommonSchema]
 .GElementCommon structure and attributes
 image::GElementCommonSchema.png[]
 
 The GElementCommon group is structured by the following subordinated elements.
 
-[#tb-gelementcommonsubelements]
+[#tb-gElementCommonSubElements]
 .GElementCommon element structure
 [width="100%",options="header"]
 |===
@@ -111,23 +111,23 @@ The GElementCommon group is structured by the following subordinated elements.
 The Classification element, which can occur multiple times, provides a set of classifications of an element, provided as keyword value pairs, the meaning of which is interpreted according to the name of the classification provided in the name attribute.
 This approach can be used, for example, to provide searchable keywords for content, or to assign and track quality or validation level requirements across the process, or to maintain variant or other classification content across the process.
 
-[#im-classificationschema]
+[#im-classificationSchema]
 .Classification element structure and attributes
 image::ClassificationSchema.png[]
 
 The Classification element is structured by the following subordinated elements.
 
-[#tb-classificationsubelements]
+[#tb-classificationSubElements]
 .Classification element structure
 [width="100%",options="header"]
 |===
 | Sub element name     | Optional / Mandatory | Details
-| ClassificationEntry  | Optional             | <<sec-classificationentry>>
+| ClassificationEntry  | Optional             | <<sec-classificationEntry>>
 |===
 
 The Classification element is associated with the following attribute.
 
-[#tb-classificationattributes]
+[#tb-classificationAttributes]
 .Classification element attributes
 [width="100%",options="header"]
 |===
@@ -138,16 +138,16 @@ The Classification element is associated with the following attribute.
 | linkedType     | Optional             | This optional attribute specifies the MIME type of the resource pointed to by the `xlink:href` attribute of the classification. There is no default value, i.e. if the attribute is not given then other mechanisms to determine the MIME type of the resource should be used. If it is given, it shall override any other mechanism to determine the MIME type of the referenced resource.
 |===
 
-[#sec-classificationentry]
+[#sec-classificationEntry]
 ===== ClassificationEntry
 
-[#im-classificationentryschema]
+[#im-classificationEntrySchema]
 .ClassificationEntry element structure and attributes
 image::ClassificationEntrySchema.png[]
 
 The ClassificationEntry element is structured by the following subordinated elements.
 
-[#tb-classificationentrysubelements]
+[#tb-classificationEntrySubElements]
 .ClassificationEntry element structure
 [width="100%",options="header"]
 |===
@@ -157,7 +157,7 @@ The ClassificationEntry element is structured by the following subordinated elem
 
 The ClassificationEntry element is associated with the following attributes.
 
-[#tb-classificationentryattributes]
+[#tb-classificationEntryAttributes]
 .ClassificationEntry element attributes
 [width="100%",options="header"]
 |===
@@ -181,13 +181,13 @@ This means, the name, structure and attributes of XML elements enclosed by a Cla
 The Annotations element can be used to add a list of annotations, as specified in the SSP standard (see <<SSP10>> section 4.2 for details).
 The following description is non-normative, as the type is fully defined in the SSP standard.
 
-[#im-annotationsschema]
+[#im-annotationsSchema]
 .Annotations element structure and attributes
 image::AnnotationsSchema.png[]
 
 The Annotations element is structured by the following subordinated elements.
 
-[#tb-annotationssubelements]
+[#tb-annotationsSubElements]
 .Annotations element structure
 [width="100%",options="header"]
 |===
@@ -203,12 +203,12 @@ The Annotations element is not associated with any attributes.
 ===== Annotation
 The Annotation element can be used to add a single annotation to the list of annotations.
 
-[#im-annotationschema]
+[#im-annotationSchema]
 .Annotation element structure and attributes
 image::AnnotationSchema.png[]
 
 
-[#tb-annotationsubelements]
+[#tb-annotationSubElements]
 .Annotation element structure
 [width="100%",options="header"]
 |===
@@ -218,7 +218,7 @@ image::AnnotationSchema.png[]
 
 The Annotation element is associated with the following attributes.
 
-[#tb-annotationattributes]
+[#tb-annotationAttributes]
 .Annotation element attributes
 [width="100%",options="header"]
 |===
@@ -232,27 +232,27 @@ The Annotation element is associated with the following attributes.
 The Annotation element may contain XML Elements of any kind, i.e. it provides the possibility and capability to code any kind of information regardless of what the containing Schema specifies.
 This means, the name, structure and attributes of XML elements enclosed by an Annotation element are completely free.  
 
-[#sec-gphasecommon]
+[#sec-gPhaseCommon]
 === GPhaseCommon
 Common element content for all phases.
 
-[#im-gphaseschema]
+[#im-gPhaseSchema]
 .GPhaseCommon structure and attributes
 image::GPhaseCommonSchema.png[]
 
 The GPhaseCommon group is structured by the following subordinated elements.
 
-[#tb-gphasecommonsubelements]
+[#tb-gPhaseCommonSubElements]
 .GPhaseCommon element structure
 [width="100%",options="header"]
 |===
 | Sub element name     | Optional / Mandatory | Details
-| Links                | Optional             | <<sec-linkstype>>
-| LifeCycleInformation | Optional             | <<sec-lifecycleinformationtype>>
-| GElementCommon       | Optional             | <<sec-gelementcommon>>
+| Links                | Optional             | <<sec-linksType>>
+| LifeCycleInformation | Optional             | <<sec-lifecycleInformationType>>
+| GElementCommon       | Optional             | <<sec-gElementCommon>>
 |===
 
-[#sec-lifecycleinformationtype]
+[#sec-lifecycleInformationType]
 === LifeCycleInformationType
 
 The LifeCycleInformationType element type defines the structure and attributes of life-cycle information about the enclosing phase or step element.
@@ -284,45 +284,45 @@ Multiple life-cycle information entries may exist to record the historical progr
 
 The LifeCycleInformationType element is structured by the following subordinated elements.
 
-[#tb-lifecycleinformationtypesubelements]
+[#tb-lifecycleInformationTypeSubElements]
 .LifeCycleInformationType element structure
 [width="100%",options="header"]
 |===
 | Sub element name | Optional / Mandatory | Details
-| Drafted          | Optional             | <<sec-lifecycleentrytype>>
-| Defined          | Optional             | <<sec-lifecycleentrytype>>
-| Validated        | Optional             | <<sec-lifecycleentrytype>>
-| Approved         | Optional             | <<sec-lifecycleentrytype>>
-| Archived         | Optional             | <<sec-lifecycleentrytype>>
-| Retracted        | Optional             | <<sec-lifecycleentrytype>>
+| Drafted          | Optional             | <<sec-lifecycleEntryType>>
+| Defined          | Optional             | <<sec-lifecycleEntryType>>
+| Validated        | Optional             | <<sec-lifecycleEntryType>>
+| Approved         | Optional             | <<sec-lifecycleEntryType>>
+| Archived         | Optional             | <<sec-lifecycleEntryType>>
+| Retracted        | Optional             | <<sec-lifecycleEntryType>>
 |===
 
 
-[#sec-lifecycleentrytype]
+[#sec-lifecycleEntryType]
 === LifeCycleEntryType
 
 The LifeCycleEntryType element defines the structure and the attributes of life-cycle information entries and therefor is the basis of the Drafted, Defined, Validated, Approved, Archived and Retracted XML elements.
 
-[#im-lifecycleentrytypeschema]
+[#im-lifecycleEntryTypeSchema]
 .LifeCycleEntryType element structure and attributes
 image::LifeCycleEntryTypeSchema.png[]
 
 The LifeCycleEntryType element is structured by the following subordinated elements.
 
-[#tb-lifecycleentryypesubelements]
+[#tb-lifecycleEntryypeSubElements]
 .LifeCycleEntryType element structure
 [width="100%",options="header"]
 |===
 | Sub element name     | Optional / Mandatory | Details
-| GResourceOrReference | Optional             | <<sec-gresourceorreference>>
-| Responsible          | Mandatory            | <<sec-responsibletype>>
-| Signature            | Optional             | <<sec-signaturetype>>
-| GElementCommon       | Optional             | <<sec-gelementcommon>>
+| GResourceOrReference | Optional             | <<sec-gResourceOrReference>>
+| Responsible          | Mandatory            | <<sec-responsibleType>>
+| Signature            | Optional             | <<sec-signatureType>>
+| GElementCommon       | Optional             | <<sec-gElementCommon>>
 |===
 
 The LifeCycleEntryType element is associated with the following attributes.
 
-[#tb-lifecycleetypeattributes]
+[#tb-lifecycleTypeAttributes]
 .LifeCycleEntryType element attributes
 [width="100%",options="header"]
 |===
@@ -332,29 +332,29 @@ The LifeCycleEntryType element is associated with the following attributes.
 | checksumType    | Optional             | This attribute gives the algorithm for the calculation of the checksum attribute. MUST be SHA3-256 for now, indicating a SHA3 256bit secure hash algorithm, as specified in FIPS 202. In the future other checksum algorithms might be supported.
 |===
 
-[#sec-steptype]
+[#sec-stepType]
 === StepType
 
 The StepType element defines the structure and attributes of an individual step inside a phase of the overall simulation task.
 
-[#im-steptypeschema]
+[#im-stepTypeSchema]
 .StepType element structure and attributes
 image::StepTypeSchema.png[]
 
 The StepType element is structured by the following subordinated elements.
 
-[#tb-steptypesubelements]
+[#tb-stepTypeSubElements]
 .StepType element structure
 [width="100%",options="header"]
 |===
 | Sub element name     | Optional / Mandatory | Details
-| Input                | Optional             | <<sec-particletype>>
-| Procedure            | Optional             | <<sec-particletype>>
-| Output               | Optional             | <<sec-particletype>>
-| Rationale            | Optional             | <<sec-particletype>>
-| Links                | Optional             | <<sec-linkstype>>
-| LifeCycleInformation | Optional             | <<sec-lifecycleinformationtype>> 
-| GElementCommon       | Optional             | <<sec-gelementcommon>>
+| Input                | Optional             | <<sec-particleType>>
+| Procedure            | Optional             | <<sec-particleType>>
+| Output               | Optional             | <<sec-particleType>>
+| Rationale            | Optional             | <<sec-particleType>>
+| Links                | Optional             | <<sec-linksType>>
+| LifeCycleInformation | Optional             | <<sec-lifecycleInformationType>> 
+| GElementCommon       | Optional             | <<sec-gElementCommon>>
 |===
 
 The essential description elements of a step are explained below.
@@ -371,7 +371,7 @@ Typically, this is used to justify decisions such as simplifications or deviatio
 
 The StepType element is associated with the following attributes.
 
-[#tb-steptypeattributes]
+[#tb-stepTypeAttributes]
 .StepType element attributes
 [width="100%",options="header"]
 |===
@@ -381,7 +381,7 @@ The StepType element is associated with the following attributes.
 |===
 
 
-[#sec-particletype]
+[#sec-particleType]
 === ParticleType
 
 The ParticleType element defines the structure and attributes of an individual particle inside a step of a phase of the overall simulation task.
@@ -390,7 +390,7 @@ The ParticleType element defines the structure and attributes of an individual p
 .ParticleType element structure and attributes
 image::ParticleTypeSchema.png[]
 
-Particles are the descriptive elements of the step within the phases. There are four types of particles (see <<sec-steptype>>).
+Particles are the descriptive elements of the step within the phases. There are four types of particles (see <<sec-stepType>>).
 
 * Input
 
@@ -402,19 +402,19 @@ Particles are the descriptive elements of the step within the phases. There are 
 
 The ParticleType element is structured by the following subordinated elements.
 
-[#tb-particletypesubelements]
+[#tb-particleTypeSubElements]
 .ParticleType element structure
 [width="100%",options="header"]
 |===
 | Sub element name     | Optional / Mandatory | Details
-| GResourceOrReference | Optional             | <<sec-gresourceorreference>>
-| GElementCommon       | Optional             | <<sec-gelementcommon>>
+| GResourceOrReference | Optional             | <<sec-gResourceOrReference>>
+| GElementCommon       | Optional             | <<sec-gElementCommon>>
 |===
 
 The ParticleType element is associated with the following attributes.
 
-[#tb-particletypeattributes]
-.ParticleType aelement ttributes
+[#tb-particleTypeAttributes]
+.ParticleType element attributes
 [width="100%",options="header"]
 |===
 | Attribute name | Optional / Mandatory | Attribute description
@@ -422,19 +422,19 @@ The ParticleType element is associated with the following attributes.
 | description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
 |===
 
-[#sec-linkstype]
+[#sec-linksType]
 === LinksType 
 
 The LinksType element defines the structure and attributes for the linkage mechanism to use links within the GlueParticle as well as links to external resources outside the GlueParticle.
 
 
-[#im-linkstypeschema]
+[#im-linksTypeSchema]
 .LinksType element structure and attributes
 image::LinksTypeSchema.png[]
 
 The LinksType element is structured by the following subordinated elements.
 
-[#tb-linkstypesubelements]
+[#tb-linkstypeSubElements]
 .LinksType element structure
 [width="100%",options="header"]
 |===
@@ -455,7 +455,7 @@ image::LinkSchema.png[]
 
 An extended link consists out of two or more Locator elements that address the resources outside of the link that are participating in the link, and optional Arc elements that provide traversal rules among the link's participating resources:
 
-[#tb-linksubelements]
+[#tb-linkSubElements]
 .Link element structure
 [width="100%",options="header"]
 |===
@@ -467,7 +467,7 @@ An extended link consists out of two or more Locator elements that address the r
 The Link element is associated with the following attributes.
 
 
-[#tb-linkattributes]
+[#tb-linkAttributes]
 .Link element attributes
 [width="100%",options="header"]
 |===
@@ -485,7 +485,7 @@ An extended link indicates resources that participate in it by means of Locator 
 NOTE:
 A Locator element, by itself, does not constitute a link just because it has a href attribute; unlike simple links, it does not create an XLink-governed association between itself and the referenced resource.
 
-[#im-locatorschema]
+[#im-locatorSchema]
 .Locator element structure and attributes
 image::LocatorSchema.png[]
 
@@ -494,7 +494,7 @@ The Locator element is not structured by subordinated elements.
 
 The Locator element is associated with the following attributes.
 
-[#tb-locatorattributes]
+[#tb-locatorAttributes]
 .Locator element attributes
 [width="100%",options="header"]
 |===
@@ -521,7 +521,7 @@ For example, a resource might generically represent a "person," but in the conte
 
 When the same resource serves as a starting resource in several arcs (whether in a single link or across many links), traversal-request behavior is unconstrained by this specification, but one possibility for interactive applications is a pop-up menu that lists the relevant arc or link titles.
 
-[#im-arcschema]
+[#im-arcSchema]
 .Arc element structure and attributes
 image::ArcSchema.png[]
 
@@ -529,7 +529,7 @@ The Arc element is not structured by subordinated elements.
 
 The Arc element is associated with the following attributes.
 
-[#tb-arcattributes]
+[#tb-arAattributes]
 .Arc element attributes
 [width="100%",options="header"]
 |===
@@ -542,33 +542,33 @@ The Arc element is associated with the following attributes.
 |===
 
 
-[#sec-resourcetype]
+[#sec-resourceType]
 === ResourceType
 
 The ResourceType element defines the structure and attributes of information about a resource that is related to the particular step and particle. Multiple (or no) resources may be present.
 
-[#im-resourcetypeschema]
+[#im-resourceTypeSchema]
 .ResourceType element structure and attributes
 image::ResourceTypeSchema.png[]
 
 The ResourceType element is structured by the following subordinated elements.
 
-[#tb-resourcetypesubelements]
+[#tb-resourceTypeSubElements]
 .ResourceType element structure
 [width="100%",options="header"]
 |===
 | Sub element name | Optional / Mandatory | Details
-| Content          | Optional             | <<sec-contenttype>>
+| Content          | Optional             | <<sec-contentType>>
 | Summary          | Optional             | <<sec-summary>>
-| Metadata         | Optional             | <<sec-metadata>>
-| Signature        | Optional             | <<sec-signaturetype>>
-| GElementCommon   | Optional             | <<sec-gelementcommon>>
+| Metadata         | Optional             | <<sec-metaData>>
+| Signature        | Optional             | <<sec-signatureType>>
+| GElementCommon   | Optional             | <<sec-gElementCommon>>
 |===
 
 The ResourceType element is associated with the following attributes.
 
 
-[#tb-resourcetypeattributes]
+[#tb-resourceTypeAttributes]
 .ResourceType element attributes
 [width="100%",options="header"]
 |===
@@ -623,25 +623,25 @@ The Summary element provides an optional summary of the resource being reference
 The summary information is intended for human consumption to get an overview of the resource content without looking at the content itself.
 The summary content can be provided inline through the Content element, or it can be provided through the source URI attribute.
 
-[#im-summaryschema]
+[#im-summarySchema]
 .Summary elements structure and attributes
 image::SummarySchema.png[]
 
 The Summary element is structured by the following subordinated elements.
 
-[#tb-summarysubelements]
+[#tb-summarySubElements]
 .Summary element structure
 [width="100%",options="header"]
 |===
 | Sub element name | Optional / Mandatory | Details
-| Content          | Optional             | <<sec-contenttype>>
-| Signature        | Optional             | <<sec-signaturetype>>
-| GElementCommon   | Optional             | <<sec-gelementcommon>> 
+| Content          | Optional             | <<sec-contentType>>
+| Signature        | Optional             | <<sec-signatureType>>
+| GElementCommon   | Optional             | <<sec-gElementCommon>> 
 |===
 
 The Summary element is associated with the following attributes.
 
-[#tb-summaryattributes]
+[#tb-summaryAttributes]
 .Summary element attributes
 [width="100%",options="header"]
 |===
@@ -651,30 +651,30 @@ The Summary element is associated with the following attributes.
 | sourceBase     | Optional             | Defines the base the source URI is resolved against: If the attribute is missing or is specified as GlueParticle, the source is resolved against the URI of the GlueParticle, if the attribute is specified as resource the URI is resolved against the (resolved) URI of the resource source. 
 |===
 
-[#sec-metadata]
+[#sec-metaData]
 ==== MetaData
 
 The MetaData element can specify additional metadata for the given resource. Multiple (or no) MetaData elements may be present.
 
-[#im-metadataschema]
+[#im-metaDataSchema]
 .MetaData element structure and attributes
 image::MetaDataSchema.png[]
 
 The MetaData element is structured by the following subordinated elements.
 
-[#tb-metadatasubelements]
+[#tb-metaDataSubElements]
 .MetaData element structure
 [width="100%",options="header"]
 |===
 | Sub element name | Optional / Mandatory |  Details
-| Content          | Optional             | <<sec-contenttype>>
-| Signature        | Optional             | <<sec-signaturetype>>
-| GElementCommon   | Optional             | <<sec-gelementcommon>> 
+| Content          | Optional             | <<sec-contentType>>
+| Signature        | Optional             | <<sec-signatureType>>
+| GElementCommon   | Optional             | <<sec-gElementCommon>> 
 |===
 
 The MetaData element is associated with the following attributes.
 
-[#tb-metadataattributes]
+[#tb-metaDataAttributes]
 .MetaData element attributes
 [width="100%",options="header"]
 |===
@@ -685,29 +685,29 @@ The MetaData element is associated with the following attributes.
 | sourceBase     | Optional            | Defines the base the source URI is resolved against:  If the attribute is missing or is specified as GlueParticle, the source is resolved against the URI of the GlueParticle, if the attribute is specified as resource the URI is resolved against the (resolved) URI of the resource source.
 |===
 
-[#sec-signaturetype]
+[#sec-signatureType]
 === SignatureType
 
 The SignatureType element defines the structure and attributes of the signature entity for a given step or phase.
 
-[#im-signaturetypeschema]
+[#im-signatureTypeSchema]
 .SignatureType element structure and attributes
 image::SignatureTypeSchema.png[]
 
 The SignatureType element is structured by the following subordinated elements.
 
-[#tb-signaturetypesubelements]
+[#tb-signatureTypeSubElements]
 .SignatureType element structure
 [width="100%",options="header"]
 |===
 | Sub element name | Optional / Mandatory |  Details
-| Content          | Optional             | <<sec-contenttype>>
-| GElementCommon   | Optional             | <<sec-gelementcommon>> 
+| Content          | Optional             | <<sec-contentType>>
+| GElementCommon   | Optional             | <<sec-gElementCommon>> 
 |===
 
 The SignatureType element is associated with the following attributes.
 
-[#tb-signaturetypeattributes]
+[#tb-signatureTypeAttributes]
 .SignatureType element attributes
 [width="100%",options="header"]
 |===
@@ -719,19 +719,19 @@ The SignatureType element is associated with the following attributes.
 |===
 
 
-[#sec-contenttype]
+[#sec-contentType]
 === ContentType
 
 The ContentType element defines the structure and attributes of inline content of an entity.
 If it is present, then the attribute source of the enclosing element must not be present.
 
-[#im-contenttypeschema]
+[#im-contentTypeSchema]
 .ContentType element structure and attributes
 image::ContentTypeSchema.png[]
 
 The ContentType element is structured by following subordinated elements.
 
-[#tb-contenttypesubelements]
+[#tb-contentTypesubElements]
 .ContentType element structure 
 [width="100%",options="header"]
 |===
@@ -748,12 +748,12 @@ The ContentType may contain XML Elements of any kind, i.e. the it provides the p
 This mean the name, structure and attributes of XML elements enclosed by a contentType element is completely free.
 
 
-[#sec-responsibletype]
+[#sec-responsibleType]
 === ResponsibleType
 
 The ResponsibleType element defines the structure and attributes of the responsible entry for a lifecycle entry of a step or a phase of the overall simulation task.
 
-[#im-responsibletypeschema]
+[#im-responsibleTypeSchema]
 .ResponsibleType element structure and attributes
 image::ResponsibleTypeSchema.png[]
 
@@ -761,7 +761,7 @@ The ResponsibleType element is not structured by subordinated elements.
 
 The ResponsibleType element is associated with the following attributes.
 
-[#tb-responsibletypeattributes]
+[#tb-responsibleTypeAttributes]
 .ResponsibleType attributes
 [width="100%",options="header"]
 |===
@@ -772,28 +772,28 @@ The ResponsibleType element is associated with the following attributes.
 |===
 
 
-[#sec-gresourceorreference]
+[#sec-gResourceOrReference]
 === GResourceOrReference
 
 The GResourceOrReference group is used to allow the specification of either a resource element or a reference to an existing resource element.
 
-[#im-gresourcereorferenceschema]
+[#im-gresourcereorferenceSchema]
 .GResourceOrReference element structure and attributes
 image::GResourceOrReferenceSchema.png[]
 
 The GResourceOrReference group is structured by the following subordinated elements, which present a choice, i.e. only one of the elements may and must be present, however the group itself is usually repeated.
 
-[#tb-gresourceorreferencesubelements]
+[#tb-gResourceOrReferenceSubElements]
 .GResourceOrReference element structure
 [width="100%",options="header"]
 |===
 | Sub element name  | Optional / Mandatory | Details
-| Resource          | Mandatory            | <<sec-resourcetype>>
-| ResourceReference | Mandatory            | <<sec-resourcereference>>
+| Resource          | Mandatory            | <<sec-resourceType>>
+| ResourceReference | Mandatory            | <<sec-resourceReference>>
 |===
 
 
-[#sec-resourcereference]
+[#sec-resourceReference]
 ==== ResourceReference
 
 The ResourceReference element is used to reference an existing Resource element, to avoid duplication of information about the resource.
@@ -801,23 +801,23 @@ All relevant information about the resource is taken from the referenced Resourc
 
 Semantically, it is treated as if the referenced Resource element where present instead of the ResourceReference element in its location.
 
-[#im-resourcereferenceschema]
+[#im-resourceReferenceSchema]
 .ResourceReference element structure and attributes
 image::ResourceReferenceSchema.png[]
 
 The ResourceReference element is structured by the following subordinated elements.
 
-[#tb-resourcereferencesubelements]
+[#tb-resourceReferenceSubElements]
 .ResourceReference element structure
 [width="100%",options="header"]
 |===
 | Sub element name | Optional / Mandatory | Details
-| GElementCommon   | Optional             |<<sec-gelementcommon>>
+| GElementCommon   | Optional             |<<sec-gElementCommon>>
 |===
 
 The ResourceRefernece element is associated with the following attributes.
 
-[#tb-resourcereferenceattributes]
+[#tb-resourceReferenceAttributes]
 .ResourceRefernece element attributes
 [width="100%",options="header"]
 |===

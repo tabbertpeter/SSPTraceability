@@ -1,4 +1,4 @@
-[#sec-commonconcepts]
+[#sec-commonConcepts]
 == Common concepts for SSP Traceability
 
 The SSP Traceability specification is based on the SSP standard and therefore employs many of its common concepts (see <<SSP10>> for details):

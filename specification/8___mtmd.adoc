@@ -1,0 +1,249 @@
+[#sec-mtmd]
+== Modeling Task Meta Data File Format
+
+The __Modeling Task Meta Data__ file (short: MTMD file) is an implementation of a GlueParticle for modeling tasks. It is specified to support traceability, quality assurance and re-usability for modeling tasks in terms of a credible modeling process as it is specified in #Document Reference#. The following sub-chapters describe the structure of an MTMD file.
+
+[#im-mtmdCredibleModelingProcess]
+.Credible Modeling Process
+image::CredibleModelingProcess.png[]
+
+=== ModelingTaskMetaData
+
+The ModelingTaskMetaData element is the all enclosing top level XML element of MTMD files.
+
+[#im-modelingTaskMetaDataSchema]
+.ModelingTaskMetaData element structure and attributes #Bild austauschen#
+image::ModelingTaskMetaDataSchema.png[]
+
+The ModelingTaskMetaData element is structured by the following subordinated elements.
+
+[#tb-modelingTaskMetaDataSubElements]
+.ModelingTaskMetaData element structure
+[width="100%",options="header"]
+|===
+| Sub element name    | Optional / Mandatory | Details
+| GeneralInformation  | Optional             | <<sec-mtmdGeneralInformation>>
+| AnalysisPhase       | Optional             | <<sec-mtmdAnalysisPhase>>
+| RequirementsPhase   | Optional             | <<sec-mtmdRequirementsPhase>> 
+| DesignPhase         | Optional             | <<sec-mtmdDesignPhase>>
+| ImplementationPhase | Optional             | <<sec-mtmdImplementationPhase>>
+| FulfillmentPhase    | Optional             | <<sec-mtmdFulfillmentPhase>>
+| GElementCommon      | Mandatory            | <<sec-gPhaseCommon>>
+|===
+
+The ModelingTaskMetaData element is associated with the following attributes.
+
+[#tb-modelingTaskMetaDataAttributes]
+.ModelingTaskMetaData element attributes
+[width="100%",options="header"]
+|===
+| Attribute name        | Optional / Mandatory | Attribute description
+| version               | Mandatory            | Version of MTMD format, 0.x for this pre-release.
+| name                  | Mandatory            | This attribute gives the modeling task a name, which can be used for purposes of presenting the modeling task to the user, e.g. when selecting individual variant STMDs from an SSP.
+| id                    | Optional             | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier. 
+| description           | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
+| author                | Optional             | This attribute gives the name of the author of this file's content.
+| fileversion           | Optional             | This attribute gives a version number for this file's content.
+| copyright             | Optional             | This attribute gives copyright information for this file's content.
+| license               | Optional             | This attribute gives license information for this file's content.
+| generatingTool        | Optional             | This attribute gives the name of the tool that generated this file.
+| generationDateAndTime | Optional             | This attribute gives the date and time this file was generated.
+| GUID                  | Mandatory            | GUID identifier of this STMD file. Must be globally unique and MUST change, whenever a new file with differing information is written.
+|===
+
+[#sec-mtmdGeneralInformation]
+==== GeneralInformation
+
+The GeneralInformation element is used to encapsulate general information about the modeling task, which is not part of any specific phase or step.
+
+For the details of the GeneralInformation element structure and attributes see chapter <<sec-generalInformationType>>.
+
+[#sec-mtmdAnalysisPhase]
+==== AnalysisPhase
+
+In the analysis phase, the modeling-relevant information from the higher-level commissioning simulation process is taken and the essential modeling-relevant requirements and objectives of the modeling task are derived. It is important that at the end of the analysis phase, the essential modeling requirements and objectives of the modeling task are fully and clearly understood.
+
+The AnalysisPhase element documents all relevant information.
+
+[#im-mtmdaAnalysisPhaseSchema]
+.AnalysisPhase element structure and attributes
+image::MtmdAnalysisPhaseSchema.png[]
+
+The AnalysisPhase element is structured by the following subordinated elements.
+
+[#tb-mtmdAnalysisPhaseSubElements]
+.AnalysisPhase element structure
+[width="100%",options="header"]
+|===
+| Sub element name                   | Optional / Mandatory | Details
+| AnalyzeModelingTaskAndObjectives   | Optional             | <<sec-stepType>>
+| VerifyAnalysis                     | Optional             | <<sec-stepType>>
+| GPhaseCommon                       | Mandatory            | <<sec-gPhaseCommon>>
+|===
+
+The AnalysisPhase element is associated with the following attributes.
+
+[#tb-mtmdAnalysisPhaseAttributes]
+.AnalysisPhase element attributes
+[width="100%",options="header"]
+|===
+| Attribute name | Optional / Mandatory | Attribut description
+| id             | Optional             | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.
+| description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
+|===
+
+
+[#sec-mtmdRequirementsPhase]
+==== RequirementsPhase
+
+In the requirements phase, the modeling requirements agreed and defined in the analysis phase are broken down into the individual components required for modeling. This includes requirements for the models, parameters, test cases, and modeling environment, but also for the integration of all components and for measures to ensure process quality. Finally, all requirements must be verified to ensure their integrity and consistency.
+
+The RequirementsPhase element documents all relevant information.
+
+[#im-mtmdRequirementPhaseSchema]
+.RequirementsPhase element structure and attributes
+image::MtmdRequirementsPhaseSchema.png[]
+
+The RequirememtsPhase element is structured by the followuing subordinated elements.
+
+[#tb-mtmdRequirementsPhaseSubElements]
+.RequirementsPhase element structure
+[width="100%",options="header"]
+|===
+| Sub element name                        | Optional / Mandatory | Details
+| DefineModelRequirements                 | Optional             | <<sec-stepType>>
+| DefineParameterRequirements             | Optional             | <<sec-stepType>>
+| DefineSimulationEnvironmentRequirements | Optional             | <<sec-stepType>>
+| DefineSimulationIntegrationRequirements | Optional             | <<sec-stepType>>
+| DefineTestCaseRequirements              | Optional             | <<sec-stepType>>
+| DefineQualityAssuranceRequirements      | Optional             | <<sec-stepType>>
+| VerifyRequirements                      | Optional             | <<sec-stepType>>
+| GPhaseCommon                            | Mandatory            | <<sec-gPhaseCommon>>
+|===
+
+The RequirementsPhase element is associated with the following attributes.
+
+[#tb-mtmdRequirementsPhaseAttributes]
+.RequirementsPhase element attributes
+[width="100%",options="header"]
+|===
+| Attribute name | Optional / Mandatory | Attribute description
+| id             | Optional             | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.
+| description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
+|=== 
+
+
+[#sec-mtmdDesignPhase]
+==== DesignPhase
+
+In the design phase, based on the requirements for each component of the modeling defined in the requirements phase, the necessary components of the modeling are specified, i.e. the models, parameters, test cases, and the modeling environment, but also the necessary measures to integrate all components and to ensure process quality. Finally, all specifications must be verified to ensure their integrity and consistency.
+
+The DesignPhase element documents all relevant information.
+
+[#im-mtmdDesignPhasSschema]
+.DesignPhase element structure and attributes
+image::MtmdDesignPhaseSchema.png[]
+
+The DesignPhase element is structured by the following subordinated elements.
+
+[#tb-mtmdDesignPhaseSubElements]
+.DesignPhase element structure
+[width="100%",options="header"]
+|===
+| Sub element name                               | Optional / Mandatory | Details
+| DefineModelDesignSpecification                 | Optional             | <<sec-stepType>>
+| DefineParaneterDesignSpecification             | Optional             | <<sec-stepType>>
+| DefineSimulationEnvironmentDesignSpecification | Optional             | <<sec-stepType>>
+| DefineSimulationIntegrationDesignSpecification | Optional             | <<sec-stepType>>
+| DefineTestCaseDesignSpecification              | Optional             | <<sec-stepType>>
+| DefineQualityAssuranceDesignSpecification      | Optional             | <<sec-stepType>>
+| VerifyDesignSpecification                      | Optional             | <<sec-stepType>>
+| GPhaseCommon                                   | Mandatory            | <<sec-gPhaseCommon>>
+|===
+
+The DesignPhase element is associated with the following attributes.
+
+[#tb-mtmdDesignPhaseAttributes]
+.DesignPhase element attributes
+[width="100%",options="header"]
+|===
+| Attribute name | Optional / Mandatory | Attribute description
+| id             | Optional             | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.
+| description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
+|===
+
+
+
+[#sec-mtmdImplementationPhase]
+==== ImplementationPhase
+
+In the implementation phase, all specified components of the modeling are implemented, i.e. the models, parameters, test cases and the modeling environment is set up.
+All components are then integrated and the specified measures to ensure process quality are implemented. In addition, it must be determined by a quality verdict that the entire setup of the modeling meets all technical and quality requirements.
+
+The ImplementationPhase element documents all relevant information.
+
+[#im-mtmdImplementationPhaseSchema]
+.ImplementationPhase element structure and attributes
+image::MtmdImplementationPhaseSchema.png[]
+
+The ImplementationPhase element is structured by the following subordinated elements.
+
+[#tb-mtmdImplementationPhaseSubElements]
+.ImplementationPhase element structure
+[width="100%",options="header"]
+|===
+| Sub element name                    | Optional / Mandatory | Details
+| ImplementModel                      | Optional             | <<sec-stepType>>
+| ImplementParameter                  | Optional             | <<sec-stepType>>
+| ImplementSimulationEnvironment      | Optional             | <<sec-stepType>>
+| ImplementTestCase                   | Optional             | <<sec-stepType>>
+| IntegrateSimulation                 | Optional             | <<sec-stepType>>
+| AssureSimulationSetupQuality        | Optional             | <<sec-stepType>>
+| DeriveSimulationSetupQualityVerdict | Optional             | <<sec-stepType>>
+| GPhaseCommon                        | Mandatory            | <<sec-gPhaseCommon>>
+|===
+
+The ImplementationPhase element is associated with the following attributes.
+
+[#tb-mtmdImplementationPhaseAttributes]
+.ImplementationPhase element attributes
+[width="100%",options="header"]
+|===
+| Attribute name | Optional / Mandatory | Attribute description
+| id             | Optional             | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.
+| description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
+|===
+
+
+[#sec-mtmdFulfillmentPhase]
+==== FulfillmentPhase
+
+In the fulfillment phase, it is checked and decided whether the entire modeling task, including the modeling results, fulfills the requirements placed on the modeling by the commissioning higher-level engineering task and whether the simulation tasks can be completed.
+
+The FulfillmentPhasePhase element documents all relevant information.
+
+[#im-mtdmFulfillmentPhaseSchema]
+.FulfillmentPhase elements structure and attributes
+image::MtmdFulfillmentPhaseSchema.png[]
+
+The FulfillmentPhase element is structured by the following subordinated elements.
+
+[#tb-mtmdFulfillmentPhaseSubElements]
+.FulfillmentPhase element structure
+[width="100%",options="header"]
+|===
+| Sub element name                      | Optional / Mandatory | Details
+| DecideSimulationObjectiveFulfillment  | Optional             | <<sec-stepType>>
+| GPhaseCommon                          | Mandatory            | <<sec-gPhaseCommon>>
+|===
+
+The FulfillmentPhase element is associated with the following attributes.
+
+[#tb-mtmdFulfillmentPhaseAttributes]
+.FulfillmentPhase element attributes
+[width="100%",options="header"]
+|===
+| Attribute name | Optional / Mandatory | Attribute description
+| id             | Optional             | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.
+| description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
+|===

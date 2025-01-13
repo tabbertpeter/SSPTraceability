@@ -1,35 +1,37 @@
-[#sec-crediblesimulationprocessframework]
+
+[#sec-credibleSimulationProcessFramework]
 == Credible Simulation Process Framework
 
-Throughout the product development process as part of the product life-cycle a large number of design decisions are made, each of which follows its own decision process, named __Credible Decision Process.__
-These decisions are based on simulation results, among other criteria.
-To obtain the decision-relevant simulation results, simulations are performed, often based on a complex simulation process, named __Credible Simulation Process.__
-This process constellation forming the Credible Simulation Process Framework is illustrated in <<im-crediblesimulationprocessframework>>. 
+In the <<im-credibleSimulationProcessFramework>>, the _Credible Decision Process_, the _Credible Simulation Process_, and the _Credible Modeling Process_ are fundamentally separate and independent processes within the _Credible Simulation Process Framework_. This separation is crucial as these processes may be executed by different roles, organizations, or even companies. Despite their independence, these processes are interconnected through communication and information transfer.
 
-The __Credible Decision Process__ and the __Credible Simulation Process__ in principle are separate and independent processes, especially since they may be carried out by different roles and organizations or even different companies.
-However, the processes are linked by communication or information transfer.
-When a __Credible Decision Process__ identifies the need for a simulation, a __Simulation Request__ is made and a __Credible Simulation Process__ is initiated. The __Credible Simulation Process__ then starts as an independent process.
+1. Simulation Request:
+   - When the need for a simulation arises within the _Credible Decision Process_, a _Simulation Request_ is issued.
+   - This request initiates a _Credible Simulation Process_, which operates independently, applying the requirements and information provided with the request.
 
-The result of a __Credible Simulation Process__, i.e. the simulation results, is then delivered to the triggering __Credible Decision Process.__
-This information transfer is referred to as __Simulation Delivery__ in <<im-crediblesimulationprocessframework>>.
+2. Modeling Request:
+   - If the _Credible Simulation Process_ requires new simulation models, a _Modeling Request_ is issued.
+   - This request triggers a _Credible Modeling Process_, which operates independently of the simulation process and applies the requirements and information provided with the request.
+
+3. Modeling Delivery:
+   - The result of the _Credible Modeling Process_, namely the simulation models, is delivered to the initiating _Credible Simulation Process_.
+   - This transfer of information is called _Modeling Delivery_.
+
+4. Simulation Delivery:
+   - The results of the _Credible Simulation Process_, i.e., the simulation results, are delivered to the initiating _Credible Decision Process_.
+   - This transfer is called _Simulation Delivery_.
 
 For more information on the processes of the Credible Simulation Process Framework, see <<SETLEVEL>>.
 
-__Note: The Credible Simulation Process Framework actually includes more than just Credible Decision Process and Credible Simulation Process.
-However, the SSP Traceability specification currently only supports traceability with respect to the Credible Decision Process and the Credible Simulation Process.__
-
-[#im-crediblesimulationprocessframework]
+[#im-credibleSimulationProcessFramework]
 .Credible Simulation Process Framework
 image::CredibleSimulationProcessFramework.png[]
 
-[#sec-credibledecisionprocess]
+[#sec-credibleDecisionProcess]
 === Credible Decision Process
 
-The Credible Decision Process as part of the Credible Simulation Process Framework consists of five successive phases, starting with the analysis of the decision to be made through the preparation of the decision and up the actual decision itself.
-The preparation includes all activities necessary to obtain and evaluate the information on which the decision will be based.
-The information needed may include simulation results. <<im-credibledecisionprocess>> illustrates this process.
+The Credible Decision Process, as part of the Credible Simulation Process Framework, consists of five successive phases. It begins with the analysis of the decision to be made, continues through the preparation of the decision, and culminates in the decision itself. The preparation phase includes all activities necessary to obtain and evaluate the information on which the decision will be based. This information can include simulation results. The <<im-credibleDecisionProcess>> illustrates this process.
 
-[#im-credibledecisionprocess]
+[#im-credibleDecisionProcess]
 .Credible Decision Process
 image::CredibleDecisionProcess.png[]
 
@@ -37,24 +39,22 @@ The phases of the Credible Decision Process are:
  
 Analysis of Decision Task:: In this phase, the information required for the execution of the decision process is determined and analyzed.
 
-Definition of Sub-Tasks:: In this phase, the sub-tasks, e.g. simulation or test tasks, required to obtain the information on which the decision should be based are defined and specified.
+Definition of Sub-Tasks:: In this phase, the sub-tasks (e.g., simulation or test tasks) required to obtain the information on which the decision should be based are defined and specified.
  
-Performing Sub-Tasks:: In this phase, the sub-tasks, e.g. simulation or test tasks, required to obtain the information on which the decision should be based, are defined and specified.
-The phase starts e.g. with the simulation request and ends with the simulation delivery from the perspective of the credible decision process.
+Performing Sub-Tasks:: In this phase, the sub-tasks (e.g., simulation or test tasks) are carried out. The phase starts with the simulation request and ends with the delivery of the simulation results from the perspective of the Credible Decision Process.
  
-Evaluation:: In this phase, the decision-relevant information returned from the sub-tasks, e.g. simulation results, is evaluated from the point of view of the Credible Decision Process.
+Evaluation:: In this phase, the decision-relevant information returned from the sub-tasks (e.g., simulation results) is evaluated from the point of view of the Credible Decision Process.
  
 Fulfillment:: The purpose of this phase is to decide whether the results fulfill the original objectives of the decision task.
 
 For more information on the Credible Decision Process, see <<SETLEVEL>>.
 
-[#sec-crediblesimulationprocess]
+[#sec-credibleSimulationProcess]
 === Credible Simulation Process
 
-The Credible Simulation Process as part of the Credible Simulation Process Framework consists of seven successive phases starting with the analysis of the simulation task through stages of simulation preparation, simulation execution and evaluation of simulation results until the decision is made whether the simulation results meet the simulation objectives and thus the simulation task can be completed.
-The Credible Simulation Process is triggered and initiated by a Simulation Request. <<im-crediblesimulationprocess>> illustrates this process.
+The __Credible Simulation Process__, as part of the __Credible Simulation Process Framework__, consists of seven sequential phases. It begins with the analysis of the simulation task and progresses through the phases of simulation preparation, simulation execution, and evaluation of simulation results. The process continues until a decision is made as to whether the simulation results meet the simulation objectives, thereby completing the simulation task. The __Credible Simulation Process__ is triggered and initiated by a simulation request and returns its results, i.e., simulation results, to the requesting __Credible Decision Process__. The <<im-credibleSimulationProcess>> illustrates this process.
 
-[#im-crediblesimulationprocess]
+[#im-credibleSimulationProcess]
 .Credible Simulation Process
 image::CredibleSimulationProcess.png[]
 
@@ -64,7 +64,7 @@ Analysis of Simulation Task:: In this phase, the information from the higher-lev
 
 Definition of Simulation Requirements:: In this phase, the requirements for the individual components of the simulation setup and their interaction as well as the requirements for quality assurance are formulated in detail.
 
-Design Specification:: The purpose of this phase is to create all the specifications needed to implement the complete simulation setup.
+Design:: The purpose of this phase is to create all the specifications needed to implement the complete simulation setup.
 
 Implementation:: The purpose of this phase is to implement the complete simulation setup with all its setup components as specified in the design specifications.
 
@@ -76,3 +76,23 @@ Evaluation:: The purpose of this phase is to evaluate the simulation results, i.
 Fulfillment:: The purpose of this phase is to confirm that the simulation results meet the original objectives of the simulation task.
 
 For more information on the Credible Simulation Process, see <<SETLEVEL>>.
+
+[#sec-credibleModelingProcess]
+=== Credible Modeling Process
+
+The__Credible Modeling Process__, as part of the __Credible Simulation Process Framework__, consists of five sequential phases. It begins with the analysis of the modeling task and proceeds through the stages of modeling preparation and the actual modeling phase. The modeling is referred to as implementation to be consistent with the corresponding naming in the __Credible Simulation Process__. The process concludes when a decision is made as to whether the simulation models meet the modeling objectives, thereby completing the modeling task. The __Credible Modeling Process__ is triggered and initiated by a __Modeling Request__ and returns its results, i.e., simulation models, to the requesting __Credible Simulation Process__. The <<im-credibleModelingProcess>> illustrates this process.
+I hope this helps! If you need any further adjustments, feel free to let me know.
+
+[#im-credibleModelingProcess]
+.Credible Modeling Process
+image::CredibleModelingProcess.png[]
+
+Analysis of Modeling Task:: In this phase, the information from the higher-level Credible Simulation Process, provided as a Modeling Request, is analyzed and detailed with respect to the information needed in the subsequent phases of the Credible Modeling Process.
+
+Definition of Modeling Requirements:: In this phase, the requirements for the individual models as well as the requirements for quality assurance are formulated in detail.
+
+Design:: The purpose of this phase is to create all the specifications needed to implement the requested resp. needed models.
+
+Implementation:: The purpose of this phase is to implement requested resp. needed models as specified in the design specifications.
+
+Fulfillment:: The purpose of this phase is to confirm that the implemneted simulation models meet the original objectives of the modeling task.

@@ -16,24 +16,24 @@ image::DecisionTaskMetaDataSchema.png[]
 
 The DecisionTaskTaskMetaData element is structured by following subordinated element.
 
-[#tb-decisiontaskmetadatasubelements]
+[#tb-decisionTaskMetaDataSubElements]
 .DecisionTaskMetaData element structure
 [width="100%",options="header"]
 |===
 | Sub element name    | Optional / Mandatory | Details
-| GeneralInformation  | Optional             | <<sec-dtmdgeneralinformation>>
-| AnalysisPhase       | Optional             | <<sec-dtmdanalysisphase>>
-| DefinitionPhase     | Optional             | <<sec-dtmddefinitionphase>> 
-| ExecutionPhase      | Optional             | <<sec-dtmdexecutionphase>>
-| EvaluationPhase     | Optional             | <<sec-dtmdevaluationphase>>
-| FulfillmentPhase    | Optional             | <<sec-dtmdfulfillmentphase>>
-| GElementCommon      | Mandatory            | <<sec-gphasecommon>>
+| GeneralInformation  | Optional             | <<sec-dtmdGeneralInformation>>
+| AnalysisPhase       | Optional             | <<sec-dtmdAnalysisPhase>>
+| DefinitionPhase     | Optional             | <<sec-dtmdDefinitionPhase>> 
+| ExecutionPhase      | Optional             | <<sec-dtmdExecutionPhase>>
+| EvaluationPhase     | Optional             | <<sec-dtmdEvaluationPhase>>
+| FulfillmentPhase    | Optional             | <<sec-dtmdFulfillmentPhase>>
+| GElementCommon      | Mandatory            | <<sec-gPhaseCommon>>
 
 |===
 
 The DecisionTaskMetaData element is associated with the following attributes.
 
-[#tb-decisiontaskmetadataattributes]
+[#tb-decisionTaskMetaDataAttributes]
 .DecisionTaskMetaData element attributes
 [width="100%",options="header"]
 |===
@@ -51,39 +51,39 @@ The DecisionTaskMetaData element is associated with the following attributes.
 | GUID                  | Mandatory            | GUID identifier of this DTMD file. Must be globally unique and MUST change, whenever a new file with differing information is written.
 |===
 
-[#sec-dtmdgeneralinformation]
+[#sec-dtmdGeneralInformation]
 ==== GeneralInformation
 
 The GeneralInformation element is used to encapsulate general information about the decision task, which is not part of any specific phase or step.
 
-For the details of the GeneralInformation element structure and attributes see chapter <<sec-generalinformationtype>>.
+For the details of the GeneralInformation element structure and attributes see chapter <<sec-generalInformationType>>.
 
-[#sec-dtmdanalysisphase]
+[#sec-dtmdAnalysisPhase]
 ==== AnalysisPhase
 
 In the analysis phase, the decision-relevant information is taken from the higher-level commissioning engineering process and the essential decision-relevant requirements and goals of the decision task are derived from it. It is important that at the end of the analysis phase the essential decision requirements and the objectives of the decision task fully and clearly understood.
 
 The AnalysisPhase element documents all relevant information.
 
-[#im-dtmdanalysisphaseschema]
+[#im-dtmdAnalysisPhaseSchema]
 .AnalysisPhase element structure and attributes
 image::DtmdAnalysisPhaseSchema.png[]
 
 The AnalysisPhase element is structured by the following subordinated element.
 
-[#tb-dtmdanalysisphasesubelements]
+[#tb-dtmdAnalysisPhaseSubElements]
 .AnalysisPhase element structure
 [width="100%",options="header"]
 |===
 | Sub element name                   | Optional / Mandatory | Details
-| AnalyzeEngineeringTask             | Optional             | <<sec-steptype>>
-| VerifyAnalysis                     | Optional             | <<sec-steptype>>
-| GPhaseCommon                       | Mandatory            | <<sec-gphasecommon>>
+| AnalyzeEngineeringTask             | Optional             | <<sec-stepType>>
+| VerifyAnalysis                     | Optional             | <<sec-stepType>>
+| GPhaseCommon                       | Mandatory            | <<sec-gPhaseCommon>>
 |===
 
 The AnalysisPhase element is associated with the following attributes.
 
-[#tb-dtmdanalysisphaseattributes]
+[#tb-dtmdAnalysisPhaseAttributes]
 .AnalysisPhase element attributes
 [width="100%",options="header"]
 |===
@@ -92,33 +92,33 @@ The AnalysisPhase element is associated with the following attributes.
 | description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
 |===
 
-[#sec-dtmddefinitionphase]
+[#sec-dtmdDefinitionPhase]
 ==== DefinitionPhase
 
 #In the definition phase, ....#
 
 The DefinitionPhase element documents all relevant information.
 
-[#im-dtmddefinitionphaseschema]
+[#im-dtmdDefinitionPhaseSchema]
 .DefinitionPhase element structure and attributes
 image::DtmdDefinitionPhaseSchema.png[]
 
 The DefinitionPhase element is structured by the following subordinated element.
 
-[#tb-dtmddefinitionphasesubelements]
+[#tb-dtmdDefinitionPhaseSubElements]
 .DefinitionPhase element structure
 [width="100%",options="header"]
 |===
 | Sub element name    | Optional / Mandatory | Details
-| DefineTasks         | Optional             | <<sec-steptype>>
-| DefineResultQuality | Optional             | <<sec-steptype>>
-| VerifyTasks         | Optional             | <<sec-steptype>>
-| GPhaseCommon        | Mandatory            | <<sec-gphasecommon>>
+| DefineTasks         | Optional             | <<sec-stepType>>
+| DefineResultQuality | Optional             | <<sec-stepType>>
+| VerifyTasks         | Optional             | <<sec-stepType>>
+| GPhaseCommon        | Mandatory            | <<sec-gPhaseCommon>>
 |===
 
 The DefinitionPhase element is associated with the following attributes.
 
-[#tb-dtmddefinitionphaseattributes]
+[#tb-dtmdDefinitionPhaseAttributes]
 .DefinitionPhase element attributes
 [width="100%",options="header"]
 |===
@@ -127,31 +127,31 @@ The DefinitionPhase element is associated with the following attributes.
 | description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
 |===
 
-[#sec-dtmdexecutionphase]
+[#sec-dtmdExecutionPhase]
 ==== ExecutionPhase
 
 In the execution phase, the previously defined tasks are executed with respect to the defined result quality.
 
 The ExecutionPhase element documents all relevant information.
 
-[#im-dtmdexecutionphaseschema]
+[#im-dtmdExecutionPhaseSchema]
 .ExecutionPhase element structure and attributes
 image::DtmdExecutionPhaseSchema.png[]
 
 The ExecutionPhase element is structured by the following subordinated element.
 
-[#tb-dtmdexecutionphasesubelements]
+[#tb-dtmdExecutionPhaseSubElements]
 .ExecutionPhase element structure
 [width="100%",options="header"]
 |===
 | Sub element name | Optional / Mandatory | Details
-| PerformTasks     | Optional             | <<sec-steptype>>
-| GPhaseCommon     | Mandatory            | <<sec-gphasecommon>>
+| PerformTasks     | Optional             | <<sec-stepType>>
+| GPhaseCommon     | Mandatory            | <<sec-gPhaseCommon>>
 |===
 
 The ExecutionPhase element is associated with the following attributes.
 
-[#tb-dtmdexecutionphaseattributes]
+[#tb-dtmdExecutionPhaseAttributes]
 .ExecutionPhase element attributes
 [width="100%",options="header"]
 |===
@@ -160,33 +160,33 @@ The ExecutionPhase element is associated with the following attributes.
 | description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
 |===
 
-[#sec-dtmdevaluationphase]
+[#sec-dtmdEvaluationPhase]
 ==== EvaluationPhase
 
 In the evaluation phase, the results of the tasks performed are evaluated and quality assurance measures are implemented.
 
 The EvaluationPhase element documents all relevant information.
 
-[#im-dtmdevaluationphaseschema]
+[#im-dtmdEvaluationPhaseSchema]
 .EvaluationPhase element structure and attributes
 image::DtmdEvaluationPhaseSchema.png[]
 
 The EvaluationPhase element is structured by the following subordinated element.
 
-[#tb-dtmdevaluationphasesubelements]
+[#tb-dtmdEvaluationPhaseSubElements]
 .EvaluationPhase element structure
 [width="100%",options="header"]
 |===
 | Sub element name            | Optional / Mandatory | Details
-| EvaluateResults             | Optional             | <<sec-steptype>>
-| AssureResultsQuality        | Optional             | <<sec-steptype>>
-| DeriveResultsQualityVerdict | Optional             | <<sec-steptype>>
-| GPhaseCommon                | Mandatory            | <<sec-gphasecommon>>
+| EvaluateResults             | Optional             | <<sec-stepType>>
+| AssureResultsQuality        | Optional             | <<sec-stepType>>
+| DeriveResultsQualityVerdict | Optional             | <<sec-stepType>>
+| GPhaseCommon                | Mandatory            | <<sec-gPhaseCommon>>
 |===
 
 The EvaluationPhase element is associated with the following attributes.
 
-[#tb-dtmdevaluationphaseattributes]
+[#tb-dtmdEvaluationPhaseAttributes]
 .EvaluationPhase element attributes
 [width="100%",options="header"]
 |===
@@ -195,31 +195,31 @@ The EvaluationPhase element is associated with the following attributes.
 | description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
 |===
 
-[#sec-dtmdfulfillmentphase]
+[#sec-dtmdFulfillmentPhase]
 ==== FulfillmentPhase 
 
 #In the fulfillment phase, it is checked and decided whether the entire simulation task, including the simulation results, fulfills the requirements placed on the simulation by the commissioning higher-level engineering task and whether the simulation tasks can be completed.#
 
 The FulfillmentPhasePhase element documents all relevant information.
 
-[#im-dtmdfulfillmentphaseschema]
+[#im-dtmdFulfillmentPhaseSchema]
 .FulfillmentPhase elements structure and attributes
 image::DtmdFulfillmentPhaseSchema.png[]
 
 The FulfillmentPhase element is structured by the following subordinated element.
 
-[#tb-dtmdfulfillmentphasesubelements]
+[#tb-dtmdFulfillmentPhaseSubElements]
 .FulfillmentPhase element structure
 [width="100%",options="header"]
 |===
 | Sub element name                      | Optional / Mandatory | Details
-| DecideEngineeringObjectiveFulfillment | Optional             | <<sec-steptype>>
-| GPhaseCommon                          | Mandatory            | <<sec-gphasecommon>>
+| DecideEngineeringObjectiveFulfillment | Optional             | <<sec-stepType>>
+| GPhaseCommon                          | Mandatory            | <<sec-gPhaseCommon>>
 |===
 
 The FulfillmentPhase element is associated with the following attributes.
 
-[#tb-dtmdfulfillmentphaseattributes]
+[#tb-dtmdFulfillmentPhaseAttributes]
 .FulfillmentPhase element attributes
 [width="100%",options="header"]
 |===

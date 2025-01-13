@@ -1,44 +1,50 @@
 [#sec-introduction]
 == Introduction
 
-In the development of products, systems, and system components, design decisions often need to be made based on simulation results.
-The results of a simulation can be used as one aspect among others for design decisions.
-Design decisions have a major impact on the further development of a product, system or system component and can also have a significant impact on development costs.
-It is therefore important that design decisions are based on reliable information and especially on credible simulation results.
+#Es fehlt eine Konvention zur Schreibweise von Credible Decision Process, Credible Simulation Process, Credible Modeling Process, Credible Simulation Process Framework, Simulation/Modeling Request und Simulation/Modeling Delivery (Upper/Lower case kursiv/nicht kursiv)#
 
-In order to make design decisions based on credible simulation results, it is essential that underlying simulation tasks are planned, executed and documented in a transparent and comprehensible manner and that there is a high degree of confidence in the correctness and validity of simulation results.
-This is essential not only to make reliable design decisions (__quality assurance__), but also to be able to understand design decisions retrospectively (__traceability__).
+In the development of products, systems, and system components, design decisions often need to be made based on simulation results. Simulation results can be one of several factors considered in design decisions. These decisions significantly influence the further development of a product, system, or component and can also have a substantial impact on development costs. Therefore, it is essential that design decisions are credible and based on credible information, particularly credible simulation results.
 
-Improving traceability of decisions and simulations is the core objective of the SSP Traceability specification, based on consistent and compatible documentation of decision processes and simulation process that produces the decision-relevant simulation results.
-Other goals of the SSP Traceability specification are to provide the ability to re-run a simulation later and to provide the ability to re-use parts of the simulation setup for similar simulations (__reusability__).
+=== Credibility, Traceability, and Reproducibility
+
+Credible simulation results can only emerge from credible simulation processes, which means that a simulation process that produces decision-relevant simulation results is planned, executed, and documented in a transparent and traceable manner. __Traceability__ of simulation processes is one prerequisite for __Credibility__ of simulation processes.
+
+Another prerequisite for the credibility of simulation processes is that the models used in the simulation process are also credible and result from a __Credible Modeling Process__. This means that a modeling process is also planned, executed, and documented in a transparent and traceable manner.
+
+__Traceability__ and __Credibility__ fosters a high level of confidence in the accuracy and validity of modeling and simulation results. In addition to building confidence in decision-relevant information, it also supports retrospective understanding of design decisions and underlying simulation and modeling processes.
+
+Given the importance of __Traceability__ for __Credibility,__ the SSP Traceability Specification aims to enable transparent and traceable documentation of decision processes, simulation processes, and modeling processes.
+
+Additionally, by enabling the rerunning of simulations at a later time and the reuse of parts of the simulation setup for similar simulations, the SSP Traceability Specification ensures the __Reproducibility__ of results, which also is a key aspect of __Credibility.__ This capability not only enhances the __Credibility__ of decision, simulation, and modeling processes and the confidence in the accuracy and validity of their results but also leads to significant cost savings and time efficiency by avoiding the need to start from scratch for similar simulations.
+
+These capabilities are integral to the core objective of the SSP Traceability Specification, which is to enhance the __Traceability, Reproducibility,__ and __Credibility__ of decision, simulation, and modeling processes and results.
 
 === Credible Simulation Process Framework
 
-The SSP Traceability Specification applies in a __Credible Simulation Process Framework__ as procedural framework, which consists of a __Credible Decision Process__ and a __Credible Simulation Process__, coupled by a __Simulation Request__ and a __Simulation Delivery.__
+The SSP Traceability Specification applies within a __Credible Simulation Process Framework__ consisting of a __Credible Decision Process__, a __Credible Simulation Process__, and a __Credible Modeling Process__. These processes are linked by __Simulation Requests__ or __Modeling Requests__ and __Simulation Deliveries__ or __Modeling Deliveries__.
 
-As the traceability of decision and simulation processes improve by applying the SSP Traceability Specification, it is expected that the reliability and credibility of simulation results will increase.
-This is expected not only when decisions and simulations are performed within a company, but also when the Credible Simulation Process Framework is spread across companies and when simulation results are requested, exchanged and shared across companies.
-Since the commissioning, preparation and execution of a simulation in that case are usually carried out by different persons or departments, sometimes even by different companies, a common understanding of the simulation task and the objectives of the simulation is essential for the quality and credibility of simulation results.
-Traceable documentation of simulation requests and simulation deliveries is therefore just as important as traceable documentation of the decision processes and simulation processes themselves.
+As the traceability of decision, simulation, and modeling processes improves through the application of the SSP Traceability Specification, the credibility of simulation and modeling results and design decisions is expected to increase.
+
+This improvement is expected not only when decisions, simulations, and modeling are performed within an organization, but also when the __Credible Simulation Process Framework__ is distributed across organizations. It applies when simulation models and results are requested, exchanged, and shared across different entities.
+
+Since the request, preparation, and execution of a simulation in such scenarios are usually carried out by different people or departments, sometimes even by different companies, a common understanding of the simulation task and its objectives is essential for the quality and credibility of the simulation results.
+
+Therefore, traceable documentation of __Simulation Requests__ and __Simulation Deliveries__, as well as __Modeling Requests__ and __Modeling Deliveries__, is as important as traceable documentation of the decision, simulation, and modeling processes themselves.
 
 === Applying SSP Traceability
 
-The SSP Traceability Specification defines and describes a concept for assuring traceability for the processes of the Credible Simulation Process Framework.
-The specification proposes to document Credible Decision Processes and Credible Simulation Processes by binding __(gluing)__ together all process-relevant resources and information in the sense of process metadata by means of appropriate SSP Traceability files for Credible Decision Processes and Credible Simulation Processes.
-The essential core of the SSP Traceability Specification document is the documentation of the appropriate set of SSP Traceability file data formats.
+The SSP Traceability Specification defines and describes a comprehensive framework for ensuring credibility, traceability, and reproducibility within the processes of the __Credible Simulation Process Framework__. This specification outlines the documentation of __Credible Decision Processes__, __Credible Simulation Processes__, and __Credible Modeling Processes__ by (__gluing__) all process-relevant resources and information as process metadata. This is achieved through the use of appropriate SSP Traceability files for each of these processes. The present SSP Traceability Specification document describes the structure of the required SSP Traceability file data formats.
+
 
 === Document structure
 
-<<sec-crediblesimulationprocessframework>> describes the Credible Simulation Process Framework as the procedural context of SSP Traceability while <<sec-overviewofssptraceability>> introduces the SSP Traceability concept and its associated set of data formats without going into detail.
-The detail description of the SSP Traceability data formats is subject of <<sec-stc>> through <<sec-srmd>>.
-<<sec-stc>> describes a common set of re-usable metadata description elements.
-<<sec-dtmd>> describes how the SSP Traceability data format for documenting Credible Decision Processes are structured and <<sec-stmd>> describes the structure of SSP Traceability data formats for the documentation of Credible Simulation Processes.
-<<sec-srmd>> additionally describes a data format for documenting resource metadata von resources in the sense of SSP Traceability.
-<<sec-ssptraceabilitypackaging>> describes how SSP Traceability files can be bundled into an SSP Traceability package.
-The SSP traceability specification concludes with a list of other applicable documents such as relevant standards and referenced literature.
+<<sec-credibleSimulationProcessFramework>> describes the __Credible Simulation Process Framework__ as the procedural context of SSP Traceability, while <<sec-overviewOfSspTraceability>> introduces the SSP Traceability concept and its associated set of data formats without going into detail.
 
-CAUTION: High-quality documentation of simulation tasks using the SSP traceability mechanisms can only reflect the quality and consistency of the simulation task actually performed to the maximum.
-However, the quality of the documentation does not guarantee the quality of the performed process.
+The detailed description of the SSP Traceability data formats is the subject of <<sec-stc>> to <<sec-srmd>>. <<sec-stc>> describes a common set of reusable metadata description elements. <<sec-dtmd>> outlines the structure of the SSP Traceability data format for documenting __Credible Decision Processes__. <<sec-stmd>> details the structure of the SSP Traceability data format for documenting __Credible Simulation Processes__, and <<sec-mtmd>> completes the series with the SSP Traceability data format structure for documenting __Credible Modeling Processes__. <<sec-srmd>> additionally describes a data format for documenting resource metadata of Simulation Resources in the context of SSP Traceability.
+
+<<sec-sspTraceabilityPackaging>> explains how SSP Traceability files can be bundled into an SSP Traceability package. The SSP Traceability Specification concludes with a list of other applicable documents, such as relevant standards and referenced literature.
+
+CAUTION: High-quality documentation of decision, simulation, and modeling processes using the SSP traceability mechanisms can only reflect the maximum quality and consistency of the processes actually performed. However, the quality of the documentation does not guarantee the quality of the processes themselves.
 
 === Conventions used in this document
 
